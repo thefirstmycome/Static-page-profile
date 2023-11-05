@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi | Images-view</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        .nav img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .nav .prev {
+            position: absolute;
+            left: 2%;
+            top: 38%;
+            width: 80px;
+            height: 150px;
+            border-radius: 8%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 150px;
+            font-size: 28px;
+            color: #fff;
+            background-color: #000;
+            opacity: 0.4;
+            transition: all 0.3s ease-in-out;
+        }
+        .nav .next {
+            position: absolute;
+            right: 2%;
+            top: 38%;
+            width: 80px;
+            height: 150px;
+            border-radius: 8%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 150px;
+            font-size: 28px;
+            color: #fff;
+            background-color: #000;
+            opacity: 0.4;
+            transition: all 0.1s ease-in-out;
+        }
+        .nav .prev:hover {
+            opacity: 0.8;
+            font-size: 34px;
+        }
+        .nav .next:hover {
+            opacity: 0.8;
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <img src="" alt="Image-Container">
+        <div class="prev"><</div>
+        <div class="next">></div>
+    </div>
+
+    <script>
+        let imags = ['./image/01.webp','./image/02.webp','./image/03.webp','./image/04.webp','./image/05.webp','./image/06.webp','./image/07.webp','./image/08.webp']
+        let prev = document.querySelector('.prev')
+        let next = document.querySelector('.next')
+        let img = document.querySelector('.nav img')
+
+        let index = 0
+        img.src = imags[index]
+
+        prev.onclick = function () {
+            index--
+            if (index < 0) {
+                index = imags.length - 1
+            }
+            img.src = imags[index]
+            console.log('切换上一张', index)
+        }
+
+        next.onclick = function () {
+            index++
+            if (index > imags.length - 1) {
+                index = 0
+            }
+            img.src = imags[index]
+            console.log('切换下一张', index)
+        }
+
+        // 自动播放
+        console.log('自动播放')
+        let timer = setInterval(function () {
+            next.onclick()
+        }, 5000)
+
+        let state = 1
+
+        prev.onmousedown = function () {
+            clearInterval(timer)
+            if(state == 1) {
+                console.log('暂停自动播放')
+                state = 0
+            }
+        }
+
+        next.onmousedown = function () {
+            clearInterval(timer)
+            if(state == 1) {
+                console.log('暂停自动播放')
+                state = 0
+            }
+        }
+    </script>
+</body>
+</html>
