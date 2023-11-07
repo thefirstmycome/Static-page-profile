@@ -1,0 +1,170 @@
+.title {
+    color: #fff;
+    text-align: center;
+    user-select: none;
+    letter-spacing: 1px;
+    font-size: 48px;
+    line-height: 52px;
+}
+
+p {
+    letter-spacing: 1px;
+}
+
+.bk {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    z-index: -10;
+    filter: brightness(72%);
+}
+
+.time {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "STHupo", 华文琥珀;
+    font-size: 38px;
+    color: #fff;
+    user-select: none;
+}
+
+.time p {
+    width: 400px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.pic {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    left: calc(50% - 100px);
+    top: 52px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(./images/Logo.gif);
+    background-size: 240%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: 0.3s;
+}
+
+.pic:hover {
+    width: 220px;
+    height: 220px;
+    top: 8px;
+    background-size: 280%;
+    transition: 0.3s;
+}
+
+.name {
+    position: relative;
+    display: block;
+    width: 280px;
+    line-height: 80px;
+    left: calc(50% - 140px);
+    top: 80px;
+    color: #fff;
+    font-family: "STHupo", 华文琥珀;
+    font-size: 38px;
+    letter-spacing: 2px;
+    text-align: center;
+    user-select: none;
+}
+
+.duce {
+    position: relative;
+    color: #fff;
+    font-family: "STHupo", 华文琥珀;
+    width: 800px;
+    left: calc(50% - 400px);
+    font-size: 28px;
+    top: 80px;
+    user-select: none;
+}
+
+.area {
+    width: 10px;
+    height: 120px;
+}
+
+#mu {
+    display: none;
+}
+
+.music_icon {
+    position: fixed;
+    background-color: pink;
+    border-radius: 50%;
+    top: 12%;
+    right: 8%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    animation: 5s zd linear infinite;
+    user-select: none;
+}
+
+.pross {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 9%;
+    width: 30px;
+    /* background-color: #20211C; */
+    background-color: rgb(137, 80, 191);
+    opacity: 0.5;
+}
+
+.voice {
+    position: fixed;
+    background-color: rgba(171, 74, 90, 0.8);
+    border-radius: 50%;
+    top: 24%;
+    right: 8%;
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-family: "STHupo", 华文琥珀;
+    transition: .5s;
+    user-select: none;
+}
+
+/* 旋转 */
+@keyframes zd {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.orcode {
+    width: calc(1054px / 2);
+    height: calc(1580px / 2);
+    border-radius: 28px;
+    position: absolute;
+    top: 82%;
+    left: 56%;
+    filter: brightness(80%);
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 480px;
+    color: #fff;
+    user-select: none;
+}
